@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Shell(npm:*)",
+      "Shell(agent-browser:*)",
+      "Shell(cat <<'EOF' | agent-browser eval --stdin const btns = document.querySelectorAll('header button'); JSON.stringify(Array.from(btns).slice(0,5).map(b => ({ label: b.getAttribute('aria-label'), html: b.innerHTML.slice(0,200) })), null, 1) EOF)",
+      "powershell",
+      "Shell(node -e \"const p=require('./node_modules/iconsax-react/package.json'); console.log(p.version, JSON.stringify(p.peerDependencies))\")",
+      "Shell(del:*)",
+      "Shell(npx tsc -b --pretty false)",
+      "Shell(findstr:*)",
+      "Shell(npm run build >nul 2>&1 && node -e \"const fs=require('fs');const f=fs.readdirSync('dist/assets').find(x=>x.endsWith('.css'));const c=fs.readFileSync('dist/assets/'+f,'utf8');for(const k of ['.z-header{','.z-overlay{','.z-drawer{']){console.log(k, c.includes(k)?'OK':'MISSING')}\")",
+      "Shell(dir:*)",
+      "Shell(for:*)",
+      "Shell(34414418:*)",
+      "Shell(do:*)"
+    ],
+    "deny": [],
+    "defaultMode": "default"
+  }
+}
